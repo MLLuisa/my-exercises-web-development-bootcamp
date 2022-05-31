@@ -1,0 +1,19 @@
+body {
+    background-color: #f3f4f5;
+    margin: 40px 40px 0 40px;
+    line-height: 20px;
+    font-family: sans-serif;
+}
+h1 {
+    font-family: arial;
+    font-size: 24px;
+    color : black;
+}
+p {
+    font-size: 18px;
+    font-family: Georgia;
+    color:#757575;
+}
+li {
+    margin-bottom: 15px;
+}
