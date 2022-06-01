@@ -1,0 +1,14 @@
+body{
+    padding: 10px; 
+    border: 6px; 
+}
+div {
+    width: 100px;
+    height: 100px; 
+    box-sizing: border-box;
+    margin: 0 auto 0 auto;
+}
+img {
+    width: 100px;
+    height: 100px;
+}
