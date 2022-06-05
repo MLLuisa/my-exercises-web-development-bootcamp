@@ -1,0 +1,29 @@
+body {
+    border: 8px;
+    display: flex;
+}
+.container {
+    border: 3px solid black;
+    margin: 106px 106px;
+    transform:translate(0px 0px);
+}
+
+.autor {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 27px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 27px;
+}
+
+
+a {
+    margin: 16px 8px;
+}
