@@ -1,0 +1,9 @@
+.cabecera {
+    background-color: purple;
+    position: fixed;
+    z-index: 3;
+}
+
+.container {
+    position: absolute;
+}

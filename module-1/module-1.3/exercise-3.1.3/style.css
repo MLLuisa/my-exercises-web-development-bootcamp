@@ -1,0 +1,11 @@
+.container3 {
+    display: flex;
+    height: 100px;
+    border: 2px solid black;
+    align-items: center;
+}
+
+div {
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+}
