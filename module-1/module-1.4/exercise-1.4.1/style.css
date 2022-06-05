@@ -1,0 +1,10 @@
+.container {
+    display: inline;
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    display: inline; 
+    margin: 12px;  
+}
