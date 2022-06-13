@@ -1,0 +1,19 @@
+.icono {
+    border: 2px solid black;
+    width: 180px;
+    height: 30px;
+}
+
+img {
+    width: 30px;
+    transform: translate(80px,0px);
+}
+
+a {
+    position: absolute;
+    margin-left: 5px;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,28 @@
+.container4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.lorem1 {
+    border: 2px solid black;
+}
+
+img {
+    width: 500px;
+    height: 300px;
+}
+
+.lorem2 {
+    border: 2px solid black;
+}
+
+.lorem3 {
+    border: 2px solid black;
+}
+
+.lorem4 {
+    border: 2px solid black;
+}
+
+.lorem5 {
+    border: 2px solid black;
+}
