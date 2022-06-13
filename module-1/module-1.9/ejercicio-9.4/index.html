@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Ejercicio otros campos</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="first-title">Instagram</h1>
+      <h2 class="second-title">
+        Regístrate para ver fotos y vídeos de tus amigos
+      </h2>
+      <a href="#" class="fa fa-facebook">Iniciar sesion con facebook</a>
+    </header>
+    <main class="form">
+      <input
+        placeholder="Numero de movil o correo electronico"
+        type="email"
+        id="emailAddres"
+        name="email"
+      />
+      <input
+        placeholder="Nombre completo"
+        type="text"
+        id="fullName"
+        name="nombre"
+      />
+      <input
+        placeholder="Nombre de usuario"
+        type="text"
+        id="fullName"
+        name="nombre"
+      />
+      <input
+        placeholder="Contraseña"
+        type="password"
+        id="password"
+        name="Contraseña"
+        required
+      />
+      <input placeholder="150cm" min="50cm" max="200cm" step="1" />
+      <label for="comments">Comentario para tu perfil:</label>
+      <textarea id="comments" name="comments" rows="8" cols="80"></textarea>
+
+      <h3>Terminos y condiciones</h3>
+      <div class="div">
+        <div>
+          <label for="paymentmethod1">
+            <input
+              id="paymentmethod1"
+              type="radio"
+              value="debitcard"
+              name="paymentmethods"
+            />
+            Aceptar las condiciones
+          </label>
+        </div>
+        <div>
+          <label for="paymentmethod1">
+            <input
+              id="paymentmethod1"
+              type="radio"
+              value="debitcard"
+              name="paymentmethods"
+            />
+            No aceptar las condiciones
+          </label>
+        </div>
+      </div>
+      <p>
+        Es posible que los usuarios de nuestro servicio hayan subido
+        tuinformacion de contacto en Instagram.
+        <strong>Mas informacion.</strong>
+      </p>
+      <p>
+        Al registrarte, aceptas nuestras <strong>condiciones</strong>. Obtem mas
+        informacionsobre como recopilamos, usamos y compartimos informacion en
+        la <strong>politica de datos</strong>, asi como el uso de las cookies y
+        tecnologias similares en nuestra <strong>politica de cookies</strong>.
+      </p>
+      <input type="submit" class="button" type="submit" value="Siguiente" />
+    </main>
+  </body>
+</html>
