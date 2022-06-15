@@ -1,0 +1,23 @@
+.author {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media all and (min-width: 768px) {
+    grid-template-columns: 1fr;
+    transform: translateY(-100px);
+  }
+
+  &__photo {
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-size: 32px;
+  }
+}
+
+.links__list {
+  list-style-type: none;
+  margin: 1em;
+}
+

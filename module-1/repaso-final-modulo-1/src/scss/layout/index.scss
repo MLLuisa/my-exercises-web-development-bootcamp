@@ -1,0 +1,26 @@
+body {
+    @media all and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      grid-template-areas:
+        'header aside'
+        'main   aside'
+        'footer footer';
+    }
+  }
+  
+  .header {
+    grid-area: header;
+  }
+  
+  .page {
+    grid-area: main;
+  }
+  
+  .author {
+    grid-area: aside;
+  }
+  
+  .footer {
+    grid-area: footer;
+  }
