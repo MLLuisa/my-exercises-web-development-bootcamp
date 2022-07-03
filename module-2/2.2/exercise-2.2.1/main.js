@@ -23,7 +23,10 @@ const totalgrape = (grapePrice)*(grapeKilos);
 
 // console.log(totalgrape);
 
-console.log(totalKiwi + totalPears + totalgrape);
+// Function total 
+const totalTotal = totalKiwi + totalPears + totalgrape;
+
+console.log(totalTotal);
 
 
 
