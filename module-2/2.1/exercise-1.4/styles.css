@@ -1,0 +1,13 @@
+.buttonOne {
+    padding: 40px;
+    border: 4px solid red;
+}
+
+.buttonTwo {
+    padding: 40px;
+    border: 4px solid red;
+}
+
+.collapsed {
+    border: 4px solid green;
+}
