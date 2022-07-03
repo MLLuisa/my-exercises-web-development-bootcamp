@@ -1,10 +1,21 @@
 "use strict";
 
-const firstClass = document.querySelector(".warning");
-firstClass.innerHTML = "tenga cuidado";
+const divClass = document.querySelector(".divClass");
+// div.classList.add("warning");
 
-const secondClass = document.querySelector(".error");
-firstClass.innerHTML = "Ha surgido un error";
-
-const thirdClass = document.querySelector(".warning");
-firstClass.innerHTML = "Los datos son correctos";
+if (divClass.classList.contains("warning")) {
+    divClass.innerHTML = `<div class="divClass>
+    <h1>AVISO</h1>
+    <p>Tengo cuidado</p>
+  </div>`;
+} else if (divClass.classList.contains("error")) {
+    divClass.innerHTML = `<div class="divClass">
+    <h1>ERROR</h1>
+    <p>Hay algunos errores</p>
+  </div>`;
+} else {
+    divClass.innerHTML = `<<div class="divClass">
+    <h1>CORRECTO</h1>
+    <p>Los datos son correctos</p>
+  </div>`;
+}
