@@ -1,0 +1,9 @@
+.darkClass {
+    color: yellow;
+    background-color: purple;
+}
+
+.lightClass {
+    color: purple;
+    background-color: yellow
+}
