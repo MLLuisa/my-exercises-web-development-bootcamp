@@ -1,0 +1,10 @@
+body {
+    font-family: sans-serif;
+}
+
+.btn {
+    width: 400px;
+    height: 200px;
+    background-color: white;
+}
+

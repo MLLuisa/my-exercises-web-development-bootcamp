@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="preconnect" href="https://pro.fontawesome.com" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <title>Blog de programación</title>
+  </head>
+  <body>
+    <include src="./partials/header.html"></include>
+    <main class="main">
+      <section class="welcome">
+        <h1 class="title">
+          Bienvenidas al blog de
+          <span class="highlight">Adalab</span>, escuela digital de programación
+          para mujeres.
+        </h1>
+        <button class="button">Hazte Adalaber</button>
+      </section>
+      <section class="articles">
+        <include
+          src="./partials/article.html"
+          image="./assets/images/Datos-sobre-data-analytics.png"
+          title="Becas del Bootcamp de Programación Web powered by Packlink."
+          description="¿Cuántas mujeres de tu círculo social o familiar conoces que se dediquen al sector tecnológico? ¿Cuántas mujeres hay en el equipo de tecnología de tu empresa? Posiblemente la respuesta a cualquiera de estas dos preguntas sea alguna o incluso ninguna.…"
+        ></include>
+        <include
+          src="./partials/article.html"
+          title="Becas del Bootcamp de Programación Web powered by Packlink."
+          description="¿Cuántas mujeres de tu círculo social o familiar conoces que se dediquen al sector tecnológico? ¿Cuántas mujeres hay en el equipo de tecnología de tu empresa? Posiblemente la respuesta a cualquiera de estas dos preguntas sea alguna o incluso ninguna.…"
+          image="./assets/images/Datos-sobre-data-analytics.png"
+        ></include>
+      </section>
+    </main>
+    <footer>
+      <section class="info">
+        <div class="message">
+          <i class="icon fas fa-comment-alt-dots fa-2x"></i>
+        </div>
+        <section class="contact">
+          <p class="how-contact">
+            <i class="icon far fa-envelope"></i> Cómo contactar
+          </p>
+          <a class="mail" href="#">hola@adalab.es</a>
+          <nav>
+            <ul class="rrss">
+              <li><i class="icon fab fa-twitter fa-2x"></i></li>
+              <li><i class="icon fab fa-facebook fa-2x"></i></li>
+              <li><i class="icon fab fa-instagram fa-2x"></i></li>
+              <li><i class="icon fab fa-linkedin fa-2x"></i></li>
+              <li><i class="icon fab fa-youtube fa-2x"></i></li>
+            </ul>
+          </nav>
+        </section>
+        <section class="menu">
+          <nav>
+            <ul>
+              <li class="item active">Cursos</li>
+              <li class="item active">Empresa</li>
+              <li class="item">Faq</li>
+              <li class="item">Voluntariado</li>
+              <li class="item">Formación Online</li>
+              <li class="item">Equipo</li>
+              <li class="item">Blog</li>
+              <li class="item">Contacto</li>
+            </ul>
+          </nav>
+        </section>
+      </section>
+      <hr class="line" />
+      <section class="copyright">
+        <p>@ 2022 Adalab</p>
+        <nav>
+          <ul class="menu">
+            <li>Cookies</li>
+            <li>Politica de Privacidad</li>
+            <li>Aviso Legal</li>
+          </ul>
+        </nav>
+      </section>
+    </footer>
+  </body>
+</html>

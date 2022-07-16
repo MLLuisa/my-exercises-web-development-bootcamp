@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+  }
+  ​
+  .col2 {
+    flex-wrap: wrap;
+  }
+  ​
+  .card {
+    padding: 0 3px;
+  }
+  ​
+  .features__concept {
+    font-size: 0.8rem;
+  }
+  ​
+  .features__value {
+    font-size: 0.6rem;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  ​
+  .form {
+    border: solid #dddddd 0.09rem;
+    border-radius: 0.5rem;
+    padding: 5px;
+  }
+  ​
+  .form__title {
+    width: auto;
+    padding: 0.5rem 1rem;
+  }
+  ​
+  .form .col2 > * {
+    width: calc(50% - 0.5rem);
+  }
+  ​
+  select.form__input-text option {
+    background-color: white;
+  }

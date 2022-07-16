@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+​
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="http://beta.adalab.es/resources/stylesheets/all.css" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Tinder de mascotas</title>
+</head>
+​
+<body class="page">
+  <header class="header">
+    <h1 class="header__title">Tinder de mascotas</h1>
+  </header>
+  <main>
+    <ul class="cards">
+      <li>
+        <article class="card">
+          <h2 class="card__title">Misifú</h2>
+          <img src="http://placekitten.com/200/300" alt="Foto de Misifú" class="card__img" />
+          <p class="card__description">
+            Muy amable
+          </p>
+          <p class="card__description">
+          <dl class="features">
+            <dt class="features__concept">Pelo</dt>
+            <dd class="features__value">Negro. Pelo corto y suave</dd>
+            <dt class="features__concept">Comida favorita</dt>
+            <dd class="features__value">Albóndigas</dd>
+            <dt class="features__concept">Carácter</dt>
+            <dd class="features__value">Muy afable</dd>
+          </dl>
+          </p>
+        </article>
+      </li>
+    </ul>
+    <form action="">
+      <fieldset class="form col2">
+        <legend class="form__title">Datos</legend>
+        <div>
+          <label class="form__label" for="type">Tipo:</label>
+          <!--<input class="form__input-text" type="text" name="type" id="type" />-->
+          <input class="js_type_cat" type="radio" name="type" id="type" value="cat" />Gato
+          <input class="js_type_dog" type="radio" name="type" id="type" value="dog" />Perro
+        </div>
+        <div class="col2">
+          <label class="form__label" for="name">Nombre:</label>
+          <input class="form__input-text" type="text" name="name" id="name" />
+        </div>
+        <div class="col2">
+          <label class="form__label" for="image">Dirección de la imagen:</label>
+          <input class="form__input-text" type="text" name="image" id="image" />
+        </div>
+        <div class="col2">
+          <label class="form__label" for="desc">Descripción:</label>
+          <input class="form__input-text" type="text" name="desc" id="desc" />
+        </div>
+      </fieldset>
+      <fieldset class="form col2">
+        <legend class="form__title">Características</legend>
+        <div class="col2">
+          <label class="form__label" for="hairkind">Tipo de pelo:</label>
+          <input class="form__input-text" type="text" name="hairkind" id="hairkind" />
+        </div>
+        <div class="col2">
+          <label class="form__label" for="haircolor">Color del pelo:</label>
+          <!--<input class="form__input-text" type="text" name="haircolor" id="haircolor" />-->
+          <select class="form__input-text">
+            <option selected disabled value="">Escoge una opción</option>
+            <option value="brown">Castaño</option>
+            <option value="white">Blanco</option>
+            <option value="black">Negro</option>
+            <option value="grey">Gris</option>
+          </select>
+        </div>
+        <div class="col2">
+          <label class="form__label" for="favfood">Comida favorita:</label>
+          <input class="form__input-text" type="text" name="favfood" id="favfood" />
+        </div>
+      </fieldset>
+      <input class="form__btn" type="submit" value="Guardar" />
+    </form>
+  </main>
+  <script src="./main.js"></script>
+</body>
+​
+</html>

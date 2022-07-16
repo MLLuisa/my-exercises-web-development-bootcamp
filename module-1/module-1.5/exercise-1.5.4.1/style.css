@@ -1,0 +1,63 @@
+/*Diseño movil*/
+
+/* * {
+    padding: 0;
+    margin: 0;
+}
+
+.container1 {
+    background-color: grey;
+    font-weight: bold;
+    width: 100%;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.container2 {
+    background-color: rgba(0, 253, 68, 0.745);
+}
+
+.container3 {
+    background-color: yellow;
+    line-height: 25px;
+}
+
+.container4 {
+    height: 20px;
+    background-color: grey;
+}
+
+h2 {
+    background-color: yellow;
+    padding-top: 2px;
+} */
+
+/* Diseño ordenador*/
+.header {
+    background-color: rgb(167, 166, 166);
+    margin: 10px;
+}
+
+.container2 {
+    background-color: rgb(105, 198, 132);
+    width: 200px;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.container3 {
+    background-color: yellow;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+

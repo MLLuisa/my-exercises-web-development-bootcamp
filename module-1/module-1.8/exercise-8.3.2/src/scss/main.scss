@@ -1,0 +1,40 @@
+// @import 'core/variables';
+// @import 'core/reset';
+// @import 'components/code';
+// @import 'components/links';
+// @import 'layout/page';
+// @import 'layout/header';
+// @import 'layout/footer';
+// @import 'pages/index';
+
+
+.header {
+    height: 75vh;
+    border: 2px solid black;
+}
+
+.section1 {
+    height: 50vh;
+    text-align: center;
+}
+
+.section2,.second-title, .button-red{
+    color: red;
+}
+
+.button-red {
+    border-radius: 5px;
+    border-width: 45px;
+}
+
+@media all and (min-width: 768px) {
+    .header {
+        height: 100vh;
+    }
+}
+
+@media all and (min-width: 1280px) {
+    .header {
+        height: 110vh;
+    }
+}
