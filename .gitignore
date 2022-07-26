@@ -1,6 +1,11 @@
 # Created by https://www.toptal.com/developers/gitignore/api/linux,visualstudiocode,windows,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,visualstudiocode,windows,macos
 
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
 ### Linux ###
 *~
 
