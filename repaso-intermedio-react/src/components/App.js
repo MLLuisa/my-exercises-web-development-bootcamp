@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/App.scss';
+import ls from '../services/local-storage';
 
 const initialContactList = [
   {
@@ -31,13 +32,26 @@ const initialContactList = [
 function App() {
 // estados
 const [filterName, setFilterName] = useState("");
-const [newContact, setNewContact] = useState("");
+const [newContactList, setNewContactList] = useState(ls.get("newContactList", initialContactList));
+const [newName, setNewName] = useState("");
+const [newLastName, setLastName] = useState("");
+const [newPhone, setNewPhone] = useState("");
+const [newEmail, setNewEmail] = useState("");
+
+// useEffect(() => {
+//   setNewContactList(ls.get("newContactList"))
+// }, [])
+
+useEffect(() => {
+  ls.set("newContactList", newContactList);
+}, [newContactList])
+
 
 const handleInputSearch = (ev) => {
   setFilterName(ev.target.value);
 }
 
-const filteredNames = (str) => initialContactList.filter(({name}) => {
+const filteredNames = (str) => newContactList.filter(({name}) => {
   let personName = name.toLowerCase()
   const searchString = str.toString().toLowerCase()
   return personName.includes(searchString)
@@ -45,16 +59,39 @@ const filteredNames = (str) => initialContactList.filter(({name}) => {
 
 let filteredListName = filteredNames(filterName)
 
+const handleChangeNewName = (ev) => {
+  const valueWritten = ev.target.value;
+  setNewName(valueWritten);
+};
+
+const handleChangeNewLastName = (ev) => {
+  const valueWritten = ev.target.value;
+  setLastName(valueWritten);
+};
+
+const handleChangeNewPhone = (ev) => {
+  const valueWritten = ev.target.value;
+  setNewPhone(valueWritten);
+};
+
+const handleChangeNewEmail = (ev) => {
+  const valueWritten = ev.target.value;
+  setNewEmail(valueWritten);
+};
+
 const addNewContact = (ev) => {
   ev.preventDefault();
-  const contact = {name: newContact, lastname: newContact, phone: newContact, email:newContact};
-  const addToList = [...initialContactList,contact]
-  setNewContact(addToList);
+  const contact = {name: newName, lastname: newLastName, phone: newPhone, email: newEmail};
+  setNewContactList([...newContactList, contact]);
+  setNewName("");
+  setLastName("");
+  setNewEmail("");
+  setNewPhone("");
 }
 
 const renderDataList = (data) => {
   if(data.length === 0){
-    return <p>Sorry, you have no contacts with that letter</p>
+    return <p>{'Sorry, you have no contacts with the searched letter(s)'}</p>
   }
 
   return data.map((el, index) => {
@@ -103,7 +140,7 @@ const renderDataList = (data) => {
         <ul className="contact__list">
           {filterName
             ? renderDataList(filteredListName)
-            : renderDataList(initialContactList)
+            : renderDataList(newContactList)
           }
         </ul>
         <form className="new-contact__form">
@@ -114,6 +151,8 @@ const renderDataList = (data) => {
             name="name"
             id="name"
             placeholder="Nombre"
+            value={newName}
+            onChange={handleChangeNewName}
           />
           <input
             className="new-contact__input"
@@ -121,6 +160,8 @@ const renderDataList = (data) => {
             name="lastname"
             id="lastname"
             placeholder="Apellidos"
+            value={newLastName}
+            onChange={handleChangeNewLastName}
           />
           <input
             className="new-contact__input"
@@ -128,6 +169,8 @@ const renderDataList = (data) => {
             name="phone"
             id="phone"
             placeholder="Teléfono"
+            value={newPhone}
+            onChange={handleChangeNewPhone}
           />
           <input
             className="new-contact__input"
@@ -135,8 +178,11 @@ const renderDataList = (data) => {
             name="email"
             id="email"
             placeholder="Email"
+            value={newEmail}
+            onChange={handleChangeNewEmail}
           />
-          <input className="new-contact__btn" type="submit" value="Añadir" onClick={addNewContact}/>
+          <input className="new-contact__btn" type="submit" value="Añadir" 
+          onClick={addNewContact}/>
         </form>
       </main>
     </div>
