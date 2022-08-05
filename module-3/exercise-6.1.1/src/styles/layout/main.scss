@@ -1,0 +1,24 @@
+.main {
+    height: 100vh;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.main-title {
+    color: var(--text-white);
+    font-size: 30px;
+    margin: 200px;
+    text-align: center;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+@media all and (min-width: 780px) {
+    .main-title{
+        font-size: 40px;
+        padding: 100px;
+    }
+
+}
