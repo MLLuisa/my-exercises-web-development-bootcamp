@@ -1,5 +1,9 @@
 
 const InputGroupText = (props) => {
+
+  const handleName = () => {
+    props.handleName();
+  }
     return (<div className="input-group-text">
     <label className="label-text" htmlFor={props.htmlFor}>
       {`Escribe un ${props.text}`}:
@@ -11,7 +15,7 @@ const InputGroupText = (props) => {
       id={props.id}
       placeholder={props.placeholder}
       value={props.value}
-      onChange={props.handleName}/>
+      onChange={handleName}/>
   </div>)
 }
 
