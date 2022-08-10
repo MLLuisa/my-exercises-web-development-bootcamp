@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
 import '../styles/components/Tweet.scss';
 
 const Tweet = (props) => {
     return (<li>
+      <Link to={`/Tweet1/${props.tweet.id}`}>
         <article className="tweet__wrapper">
           <img className="tweet__avatar" src={props.tweet.avatar} alt={`Avatar de ${props.tweet.user}`} />
           <div className="tweet__content">
@@ -21,6 +23,7 @@ const Tweet = (props) => {
             </ul>
           </div>
         </article>
+        </Link>
       </li>)
 }
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useRouteMatch, } from 'react-router-dom';
 import '../styles/App.scss';
 import getTweets from '../services/api';
 import ls from '../services/local-storage';
@@ -9,6 +9,7 @@ import ComposeModal from './ComposeModal';
 import Tweets from './Tweets';
 import Home from './Home';
 import Search from './Search';
+import TweetDetail from './TweetDetail';
 
 function App() {
   // state
@@ -52,6 +53,7 @@ function App() {
     setComposeText("");
   }
 
+
   const renderComposeModal = () => {
     if(composeIsOpen) {
         return <ComposeModal 
@@ -64,12 +66,27 @@ function App() {
     
   }
 
+  const routeTweetData = useRouteMatch('/tweet1/:tweetId')
+
+  const getRouteTweet = () => {
+    if(routeTweetData) {
+    const routeTweetId = routeTweetData.params.tweetId;
+    const routeTweet = tweets.find(tweet => {
+      return tweet.id === routeTweetId;
+    }) ;
+      return routeTweet || {}
+   
+     }
+  }
+ 
+  
+
   return (
     <div className="page">
       <Header handleToggleCompose={handleToggleCompose}/>
       <main className="main">
       <Switch>
-          <Route path="/" exact>
+          <Route path="/home" exact>
             <Home />
             <Tweets tweets={tweets} />
           </Route>
@@ -81,6 +98,7 @@ function App() {
             <Profile />
             <Tweets tweets={tweets} />
           </Route>
+          <Route path='/tweet1/:tweetId'>< TweetDetail tweet1 = {getRouteTweet()}/></Route>
         </Switch>
       
       {renderComposeModal()}
