@@ -2,9 +2,9 @@ import UserItem from "./UserItem";
 
 const UserList = (props) => {
 
-    const userElements = props.users.map((user) => {
+    const userElements = props.users.map((item) => {
         return(
-            <UserItem user={user}/>
+            <UserItem user={item} key={item.id}/>
         )
     })
     return (
