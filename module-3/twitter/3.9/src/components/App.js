@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch, useRouteMatch, } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
 import '../styles/App.scss';
 import getTweets from '../services/api';
 import ls from '../services/local-storage';
@@ -47,7 +48,7 @@ function App() {
 
   const handleComposeSubmit = (ev) => {
     tweets.unshift({
-      "id": "1243sdf",
+      "id": uuid(),
       "avatar": "http://localhost:3000/assets/avatars/user-me.jpg",
       "user": "Adalab",
       "username": "adalab_digital",
