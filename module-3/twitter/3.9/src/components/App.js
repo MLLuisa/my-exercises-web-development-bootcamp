@@ -10,16 +10,20 @@ import Tweets from './Tweets';
 import Home from './Home';
 import Search from './Search';
 import TweetDetail from './TweetDetail';
+import Loader from './Loader';
 
 function App() {
   // state
   const [composeIsOpen, setComposeIsOpen] = useState(false);
   const [composeText, setComposeText] = useState(ls.get("composeText", "")); 
   const [tweets, setTweets] = useState([]);
+  const [showLoading, setShowLoading] = useState(false);
 
   // effect
   useEffect(() => {
+    setShowLoading(true)
     getTweets().then(data => {
+      setShowLoading(false)
       setTweets(data);
     });
   }, []);
@@ -102,6 +106,7 @@ function App() {
       
       {renderComposeModal()}
       </main>
+      <Loader showLoading={showLoading}/>
     </div>
   );
 }
