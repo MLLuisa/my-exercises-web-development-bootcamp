@@ -12,6 +12,7 @@ import Home from './Home';
 import Search from './Search';
 import TweetDetail from './TweetDetail';
 import Loader from './Loader';
+import date from '../services/date';
 
 function App() {
   // state
@@ -52,7 +53,7 @@ function App() {
       "avatar": "http://localhost:3000/assets/avatars/user-me.jpg",
       "user": "Adalab",
       "username": "adalab_digital",
-      "date": "8 sep. 2021",
+      "date": date.getCurrentDate(),
       "text": composeText,
       "comments": 0,
       "retweets": 0,
