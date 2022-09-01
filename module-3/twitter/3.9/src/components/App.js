@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Route, Switch, useRouteMatch, } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import '../styles/App.scss';
-import getTweets from '../services/api';
 import ls from '../services/local-storage';
 import Profile from './Profile';
 import Header from './Header';
@@ -13,6 +12,7 @@ import Search from './Search';
 import TweetDetail from './TweetDetail';
 import Loader from './Loader';
 import date from '../services/date';
+import api from '../services/api';
 
 function App() {
   // state
@@ -21,15 +21,22 @@ function App() {
   const [tweets, setTweets] = useState([]);
   const [showLoading, setShowLoading] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [profile, setProfile] = useState({});
 
   // effect
   useEffect(() => {
     setShowLoading(true)
-    getTweets().then(data => {
+    api.getTweets().then(data => {
       setShowLoading(false)
       setTweets(data);
     });
   }, []);
+
+  useEffect(() => {
+    api.getProfile().then(data => {
+      setProfile(data);
+    })
+  }, [])
 
   useEffect(() => {
     ls.set("composeText", composeText);
@@ -50,9 +57,9 @@ function App() {
   const handleComposeSubmit = (ev) => {
     tweets.unshift({
       "id": uuid(),
-      "avatar": "http://localhost:3000/assets/avatars/user-me.jpg",
-      "user": "Adalab",
-      "username": "adalab_digital",
+      "avatar": profile.avatar,
+      "user": profile.user,
+      "username": profile.username,
       "date": date.getCurrentDate(),
       "text": composeText,
       "comments": 0,
@@ -113,7 +120,8 @@ function App() {
             <Tweets tweets={getFilteredTweets()} />
           </Route>
           <Route path="/profile">
-            <Profile />
+            <Profile  
+            profile={profile}/>
             <Tweets tweets={tweets} />
           </Route>
           <Route path='/tweet1/:tweetId'>< TweetDetail tweet1 = {getRouteTweet()}/></Route>
