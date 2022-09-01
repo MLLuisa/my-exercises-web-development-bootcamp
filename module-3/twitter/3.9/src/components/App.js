@@ -18,6 +18,7 @@ function App() {
   const [composeText, setComposeText] = useState(ls.get("composeText", "")); 
   const [tweets, setTweets] = useState([]);
   const [showLoading, setShowLoading] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   // effect
   useEffect(() => {
@@ -38,6 +39,10 @@ function App() {
 
   const handleComposeText = (value) => {
     setComposeText(value);
+  }
+
+  const handleSearchText = (searchText) => {
+    setSearchText(searchText)
   }
 
   const handleComposeSubmit = (ev) => {
@@ -70,6 +75,12 @@ function App() {
     
   }
 
+  const getFilteredTweets = () => {
+    return tweets.filter((tweet) => {
+      return tweet.text.toLowerCase().includes(searchText.toLowerCase()) || tweet.user.toLowerCase().includes(searchText.toLowerCase());
+    })
+  }
+
   const routeTweetData = useRouteMatch('/tweet1/:tweetId')
 
   const getRouteTweet = () => {
@@ -94,8 +105,10 @@ function App() {
             <Tweets tweets={tweets} />
           </Route>
           <Route path="/search">
-            <Search />
-            <Tweets tweets={tweets} />
+            <Search 
+            handleSearchText={handleSearchText}
+            searchText={searchText}/>
+            <Tweets tweets={getFilteredTweets()} />
           </Route>
           <Route path="/profile">
             <Profile />
