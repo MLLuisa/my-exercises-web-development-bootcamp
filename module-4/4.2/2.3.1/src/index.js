@@ -28,7 +28,6 @@ server.post('/user', (req, res) => {
   console.log('Query params:', req.query);
   console.log('Query param userName:', req.query.userName);
   console.log('Query param userEmail:', req.query.userEmail);
-  console.log('Query param newName:', req.query.newName);
 
   // add new user to daba base
   users.push({
@@ -43,7 +42,8 @@ server.post('/user', (req, res) => {
 });
 
 server.get('/users', (req, res) => {
+  const filteredUser = users.filter((user) => user.name === req.query.newName)
   res.json({
-    result: users
+    result: filteredUser
   });
 });
