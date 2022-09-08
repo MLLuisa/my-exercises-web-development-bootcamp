@@ -20,7 +20,7 @@ const staticServerPath = './public';
 server.use(express.static(staticServerPath));
 
 // init and config data base
-const db = new Database('./src/database', {
+const db = new Database('./src/database.db', {
   // comment next line to hide data base logs in console
   verbose: console.log
 });
